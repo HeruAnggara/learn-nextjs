@@ -26,6 +26,13 @@ export default function MainLayout({
                 About
               </Link>
             </li>
+            <li>
+              <Link
+                href="/blog"
+              >
+                Blog
+              </Link>
+            </li>
           </ul>
         </header>
         <main className="container mx-auto my-2 p-4 bg-neutral-100">
