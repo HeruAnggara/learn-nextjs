@@ -1,3 +1,7 @@
+'use client'
+
+import { useCount } from '@/context'
+import { dataStore } from '@/store/dataStore'
 import Head from 'next/head'
 import Link from 'next/link'
 export default function MainLayout({
@@ -5,6 +9,8 @@ export default function MainLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  const {count}  = dataStore()
     
   return (
     <>
@@ -36,9 +42,12 @@ export default function MainLayout({
           </ul>
         </header>
         <main className="container mx-auto my-2 p-4 bg-neutral-100">
+          <div>
+            <p>{`Count: ${count}`}</p>
+          </div>
           {children}
         </main>
-        <footer className="w-full mx-auto bg-gray-800 text-center text-white text-base py-4 bottom-0 sticky">
+        <footer className="w-full mx-auto bg-gray-800 text-center text-white text-base py-4 bottom-0 absolute">
           <p>Copyright &copy; {new Date().getFullYear()}</p>
         </footer>
       </div>
